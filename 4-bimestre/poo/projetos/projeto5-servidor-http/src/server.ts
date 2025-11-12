@@ -1,20 +1,15 @@
-import http from 'http'
+import http from "http"
 
-const PORT = Number(process.env.PORT ?? 3001)
-const NAME = 'John'
-const AGE = 34
+const port = 3001
+const name = "John"
+const age = 34
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
-  res.end(`Servidor rodando para ${NAME}, idade ${AGE}!`)
+  res.end(`Servidor rodando para ${name}, idade ${age}!`)
 })
 
-server.listen(PORT, () => {
-  console.log(`Servidor funcionando em http://localhost:${PORT}`)
-})
-
-server.close(() => {
-  console.log('Servidor encerrado.')
+server.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`)
 })
 
 export default server
